@@ -1,0 +1,27 @@
+# Ignore all node_modules in any subfolder
+**/node_modules/
+
+# Ignore all dist folders (Angular build output)
+**/dist/
+
+# Ignore Angular CLI output folder
+**/.angular/
+
+# Ignore environment files (if any secrets used)
+**/src/environments/*.local.ts
+**/src/environments/*.prod.ts
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# npm package lock (optional, keep if consistent versioning desired)
+# **/package-lock.json

@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+html {
+  color-scheme: light ;
+
+  @include mat.theme((
+    color: mat.$violet-palette,
+    typography: Roboto,
+    density: 0,
+  ));
+
+  // Apply global overrides for toolbar
+  mat-toolbar {
+    justify-content: space-between;
+    @include mat.toolbar-overrides((
+      container-background-color: var(--mat-sys-primary),
+      container-text-color: var(--mat-sys-on-primary),
+    ));
+
+    @include mat.icon-button-overrides((
+        icon-color:var(--mat-sys-on-primary)
+    ))
+  }
+}

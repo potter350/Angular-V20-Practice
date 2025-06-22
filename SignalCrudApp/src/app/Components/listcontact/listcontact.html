@@ -1,0 +1,17 @@
+
+<mat-list role="list">
+    @for (contact of contactResource.value(); track contact.id){
+    <mat-list-item>
+        <h3 matListItemTitle (click)="console()">{{contact?.name}}</h3>
+        <p matListItemLine>{{contact?.email}}</p>
+        <div matListItemMeta>
+            <button mat-icon-button routerLink="/edit" >
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="deleteContact(contact.id)" >
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </mat-list-item>
+    }
+</mat-list>
