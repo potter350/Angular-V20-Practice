@@ -15,3 +15,11 @@
     </mat-list-item>
     }
 </mat-list>
+
+
+ @if (loading()) {
+    <mat-spinner
+      mode="indeterminate"
+      diameter="50"
+    ></mat-spinner>
+    }

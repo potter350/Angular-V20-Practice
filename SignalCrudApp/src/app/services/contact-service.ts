@@ -162,8 +162,11 @@ export class ContactService {
   }
 
   async deleteContact(id:string):Promise<Contact[]>{
+    console.log('deleteContact service method called');
     this.simulateDelay()
-    return this.contacts.filter((c)=>c.id !== id)
+    this.contacts = this.contacts.filter((c)=>c.id !== id)
+    console.log('after deletecptact',this.contacts)
+    return this.contacts
   }
 
   async updateContact(contact:Contact):Promise<Contact>{
