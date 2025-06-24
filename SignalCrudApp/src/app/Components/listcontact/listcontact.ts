@@ -33,9 +33,4 @@ export class Listcontact {
 
   }
 
-  
-  console(){
-    console.log('contactResource.value()',this.contactResource.value())
-  }
-
 }

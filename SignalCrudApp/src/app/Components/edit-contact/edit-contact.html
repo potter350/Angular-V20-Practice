@@ -1,1 +1,15 @@
-<p>edit-contact works!</p>
+
+
+
+<app-contactform 
+[title]="titleValue"   
+[contact]="contactResource.value()"
+(save)="updateContact($event)" 
+></app-contactform>
+
+ @if (loading()) {
+    <mat-spinner
+      mode="indeterminate"
+      diameter="50"
+    ></mat-spinner>
+    }
