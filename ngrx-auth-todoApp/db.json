@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "9d6172b7-0ff4-464d-a18f-4ba3d8eca43b",
+      "name": "gio",
+      "email": "gio@gmail.com",
+      "password": "123456"
+    }
+  ],
+  "todos": [
+    {
+      "id": "3cf3a0aa-1fa5-4a33-bea1-9d732a4aa0e8",
+      "userId": "9d6172b7-0ff4-464d-a18f-4ba3d8eca43b",
+      "task": "food",
+      "completed": true,
+      "createdAt": "2025-06-10T18:39:07.693Z"
+    }
+]
+}
