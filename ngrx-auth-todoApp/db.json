@@ -5,6 +5,24 @@
       "name": "gio",
       "email": "gio@gmail.com",
       "password": "123456"
+    },
+    {
+      "id": "0db1eb7b-cdf5-4a9a-afda-5126952a9422",
+      "name": "Kalash Nikovasda",
+      "email": "ak47@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "6b03481e-5c05-435d-8524-3820650c3f0f",
+      "name": "Kalash Nikovasda",
+      "email": "asfa@sfs.sdf",
+      "password": "123456"
+    },
+    {
+      "id": "3f7bcfd0-6f52-4d8e-9e53-7c9894ab6c61",
+      "name": "Michael",
+      "email": "mwilams@email.com",
+      "password": "123456"
     }
   ],
   "todos": [
@@ -15,5 +33,5 @@
       "completed": true,
       "createdAt": "2025-06-10T18:39:07.693Z"
     }
-]
+  ]
 }

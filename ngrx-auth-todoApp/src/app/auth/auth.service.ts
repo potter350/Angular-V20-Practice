@@ -36,7 +36,7 @@ export class AuthService {
       switchMap(existingUser => {
         // If user exists, throw error
         if (existingUser.length > 0) {
-          return throwError(() => new Error('Email already exist in db'));
+          return throwError(() => 'Email already exist in db');
         }
 
         // Step 2: If not exists, save new user to the DB
@@ -90,6 +90,9 @@ export class AuthService {
     let errorMessage = 'An unknown error occurred during authentication.';
 
     // Use custom error message if available
+    if(error == String) {
+      errorMessage = error
+    }
     if (error.message) {
       errorMessage = error.message;
     } else if (error.status) {

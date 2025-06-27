@@ -22,13 +22,13 @@ export class TodoService{
         )
     }
 
-    addTodo(userId:string, todo:Todo):Observable<Todo>{
+    addTodo(userId:string, task:string):Observable<Todo>{
        const newTodo:Todo = {
           id : uuidv4(),
-          userid:todo.userid,
-          task:todo.task,
-          completed:todo.completed,
-          createdAt:todo.createdAt
+          userid:userId,
+          task:task,
+          completed:false,
+          createdAt: new Date().toISOString()
        }
        return this.http.post<Todo>(this.todoUrl, newTodo).pipe(
          catchError(this.handleError)

@@ -1,0 +1,54 @@
+
+<div class="auth-container">
+   <h2>Register</h2>
+   <form #registerForm="ngForm" (ngSubmit)="onSubmitForm(registerForm)" >
+
+     <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" minlength="3" ngModel required #nameinput="ngModel"  >
+      @if(nameinput.invalid && (nameinput.dirty || nameinput.touched) ){
+          <div class="error-message">
+               @if( nameinput.errors?.['required'] ){ <span> Kindly enter the name </span> }
+               @if( nameinput.errors?.['minlength'] ){ <span> Name atleast have 3 characters </span> }
+          </div>
+      }
+     </div>
+
+     <div class="form-group">
+       <label for="email">Email</label>
+       <input type="email" name="email" id="email" email ngModel required #emailinput="ngModel"  >
+           @if(emailinput.invalid && (emailinput.dirty || emailinput.touched )){
+               <div class="error-message">
+                       @if( emailinput.errors?.['required'] ) { <span>Email is required</span>  }
+                       @if( emailinput.errors?.['email'] ) { <span>Please Enter a valid email</span>  }
+               </div>
+           }
+     </div>
+
+     <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" ngModel required #pswrdinput="ngModel" minlength="6" >
+        @if(pswrdinput.invalid && (pswrdinput.touched || pswrdinput.dirty)  ){
+             <div class="error-message">
+                   @if( pswrdinput.errors?.['required'] ){ <span> Passoword is required </span> }
+                   @if( pswrdinput.errors?.['minlength'] ){ <span> Passoword must be atleast 6 characters </span> }
+             </div>
+        }
+     </div>
+
+     <button  type="submit" [disabled]="registerForm.invalid || (isLoading$ | async )  " >
+       {{ (isLoading$ | async) ? 'Registering' : 'Register'}}
+     </button>
+   </form>
+
+   
+   @if(isError$ | async ){
+    <div class="error-message server-error">
+       {{isError$ | async }}
+    </div>
+   }
+   
+   <p class="switch-form">
+     Already have an account? <a routerLink="/login" >click here</a>
+   </p>
+</div>
